@@ -56,11 +56,57 @@ body{
     margin: 0;
     overflow: hidden scroll;
     -ms-overflow-style: none;
+    background-attachment: fixed;
 
     #page{
         width: 100%;
         height: calc(100vh * 4);
         position: relative;
+
+        &:before{
+            content: " ";
+            display: block;
+            background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
+            width: 814px;
+            height: 653px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            background-size: contain;
+            transition: all linear 0.3s;
+
+            @media (max-width: 1600px){
+                width: 400px;
+                background-position: 0 100%;
+            }
+
+            @media (max-width: 768px){
+                width: 250px;
+            }
+        }
+
+        &:after{
+            content: " ";
+            display: block;
+            background: url(../assets/images/floral_5.png) 0 0 no-repeat transparent;
+            width: 757px;
+            height: 758px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 100;
+            background-size: contain;
+            transition: all linear 0.3s;
+
+            @media (max-width: 1600px){
+                width: 400px;
+            }
+
+            @media (max-width: 768px){
+                width: 250px;
+            }
+        }
 
         section{
             height: 100vh;
@@ -84,51 +130,6 @@ body{
         #banner{
             transform: translateY(0);
             z-index: 10;
-
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
-            &:after{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_5.png) 0 0 no-repeat transparent;
-                width: 757px;
-                height: 758px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
 
             &.section{
 
@@ -379,55 +380,12 @@ body{
         #location{
             z-index: 9;
 
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 5;
-                transform: scaleY(-1);
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
-            &:after{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_7.png) 0 0 no-repeat transparent;
-                width: 800px;
-                height: 800px;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                z-index: 5;
-                transform: scaleX(-1);
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
 
             &.section{
+                height: auto;
+                padding-top: 150px;
+                padding-bottom: 50px;
+
                 .container{
                     position: relative;
                     z-index: 10;
@@ -539,30 +497,11 @@ body{
         #principalsponsors{
             z-index: 8;
 
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
             &.section{
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+
                 .container{
                     position: relative;
                     z-index: 10;
@@ -572,7 +511,6 @@ body{
                     justify-content: flex-start;
                     align-items: center;
                     gap: 50px;
-                    padding-top: 5%;
 
                     @media (max-width: 767px){
                         gap: 30px;
@@ -641,55 +579,11 @@ body{
         #secondarysponsors{
             z-index: 7;
 
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 5;
-                transform: scaleY(-1);
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
-            &:after{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_7.png) 0 0 no-repeat transparent;
-                width: 800px;
-                height: 800px;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                z-index: 5;
-                transform: scaleX(-1);
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
             &.section{
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+
                 .container{
                     position: relative;
                     z-index: 10;
@@ -789,52 +683,11 @@ body{
         #entourage{
             z-index: 6;
 
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
-            &:after{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_5.png) 0 0 no-repeat transparent;
-                width: 757px;
-                height: 758px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
             &.section{
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 20px;
+
                 .container{
                     position: relative;
                     z-index: 10;
@@ -871,7 +724,7 @@ body{
                         justify-content: space-between;
                         align-items: center;
                         gap: 50px;
-                        max-width: 1024px;
+                        max-width: 700px;
                         width: 100%;
 
                         @media (max-width: 767px){
@@ -935,55 +788,11 @@ body{
         #kids{
             z-index: 5;
 
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 5;
-                transform: scaleY(-1);
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
-            &:after{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_7.png) 0 0 no-repeat transparent;
-                width: 800px;
-                height: 800px;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                z-index: 5;
-                transform: scaleX(-1);
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
             &.section{
+                height: auto;
+                padding-top: 0px;
+                padding-bottom: 50px;
+
                 .container{
                     position: relative;
                     z-index: 10;
@@ -1084,6 +893,10 @@ body{
             z-index: 4;
 
             &.section{
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+
                 .container{
                     position: relative;
                     z-index: 10;
@@ -1217,52 +1030,11 @@ body{
         #msg{
             z-index: 3;
 
-            &:before{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_6.png) 0 0 no-repeat transparent;
-                width: 814px;
-                height: 653px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                    background-position: 0 100%;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
-            &:after{
-                content: " ";
-                display: block;
-                background: url(../assets/images/floral_5.png) 0 0 no-repeat transparent;
-                width: 757px;
-                height: 758px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 5;
-                background-size: contain;
-                transition: all linear 0.3s;
-
-                @media (max-width: 1600px){
-                    width: 400px;
-                }
-
-                @media (max-width: 768px){
-                    width: 250px;
-                }
-            }
-
             &.section{
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 200px;
+
                 .container{
                     position: relative;
                     z-index: 10;
