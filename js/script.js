@@ -1,6 +1,2 @@
-const pageable = new Pageable("#page", {
-    animation: 500,
-    freeScroll: false,
-    swipeThreshold: 10,
-    infinite: false,
-});
+console.log('🤵Alfe Caesar & Judy Ann👰');
+console.log('💍NOV-18-2023💍');

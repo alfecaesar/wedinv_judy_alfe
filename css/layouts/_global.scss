@@ -34,8 +34,6 @@ body{
     width: 100%;
     padding: 0;
     margin: 0;
-    overflow: hidden scroll;
-    -ms-overflow-style: none;
     background-attachment: fixed;
 
     #page{
@@ -109,8 +107,7 @@ body{
         }
 
         #banner{
-            transform: translateY(0);
-            z-index: 10;
+            position: relative;
 
             &.section{
 
@@ -359,7 +356,6 @@ body{
         }
 
         #location{
-            z-index: 9;
 
 
             &.section{
@@ -477,7 +473,6 @@ body{
         }
 
         #principalsponsors{
-            z-index: 8;
 
             &.section{
                 height: auto;
@@ -559,7 +554,6 @@ body{
         }
 
         #secondarysponsors{
-            z-index: 7;
 
             &.section{
                 height: auto;
@@ -663,7 +657,6 @@ body{
         }
 
         #entourage{
-            z-index: 6;
 
             &.section{
                 height: auto;
@@ -768,7 +761,6 @@ body{
         }
 
         #kids{
-            z-index: 5;
 
             &.section{
                 height: auto;
@@ -872,7 +864,6 @@ body{
         }
 
         #guides{
-            z-index: 4;
 
             &.section{
                 height: auto;
@@ -1010,7 +1001,6 @@ body{
         }
 
         #msg{
-            z-index: 3;
 
             &.section{
                 height: auto;
