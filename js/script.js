@@ -72,3 +72,8 @@ window.onscroll = () => {
     // Keep scrollbar in the middle of the viewport
     // window.scroll(0, window.screen.height)
 }
+
+
+window.addEventListener('load', () => {
+    document.querySelector('#banner').classList.add('active');
+});

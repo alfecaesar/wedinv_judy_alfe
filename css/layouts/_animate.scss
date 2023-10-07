@@ -1,0 +1,329 @@
+#banner{
+    h3{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .3s;
+    }
+    h1{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .5s;
+    }
+    .date{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .8s;
+    }
+    &.active{
+        h3{
+            opacity: 1;
+        }
+        h1{
+            opacity: 1;
+        }
+        .date{
+            opacity: 1;
+        }
+    }
+}
+#location{
+    h3{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .3s;
+    }
+    .church{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .5s;
+    }
+    .map{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .8s;
+    }
+    .btn{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: 1s;
+    }
+    &.active{
+        h3{
+            opacity: 1;
+        }
+        .church{
+            opacity: 1;
+        }
+        .map{
+            opacity: 1;
+        }
+        .btn{
+            opacity: 1;
+
+        }
+    }
+}
+#principalsponsors{
+    h3{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .3s;
+    }
+    .name{
+        &:nth-of-type(1){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
+        }
+        &:nth-of-type(2){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .8s;
+        }
+        &:nth-of-type(3){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1s;
+        }
+        &:nth-of-type(4){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1.3s;
+        }
+        &:nth-of-type(5){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1.5s;
+        }
+        &:nth-of-type(6){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1.8s;
+        }
+        &:nth-of-type(7){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 2s;
+        }
+        &:nth-of-type(8){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 2.3s;
+        }
+    }
+    &.active{
+        h3{
+            opacity: 1;
+        }
+        .name{
+            &:nth-of-type(1){
+                opacity: 1;
+            }
+            &:nth-of-type(2){
+                opacity: 1;
+            }
+            &:nth-of-type(3){
+                opacity: 1;
+            }
+            &:nth-of-type(4){
+                opacity: 1;
+            }
+            &:nth-of-type(5){
+                opacity: 1;
+            }
+            &:nth-of-type(6){
+                opacity: 1;
+            }
+            &:nth-of-type(7){
+                opacity: 1;
+            }
+            &:nth-of-type(8){
+                opacity: 1;
+            }
+        }
+    }
+}
+#secondarysponsors{
+    h3{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .3s;
+    }
+    .card{
+        &:nth-of-type(1){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
+        }
+        &:nth-of-type(2){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .8s;
+        }
+        &:nth-of-type(3){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1s;
+        }
+    }
+    &.active{
+        h3{
+            opacity: 1;
+        }
+        .card{
+            &:nth-of-type(1){
+                opacity: 1;
+            }
+            &:nth-of-type(2){
+                opacity: 1;
+            }
+            &:nth-of-type(3){
+                opacity: 1;
+            }
+        }
+    }
+}
+#entourage{
+    h3{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: .3s;
+    }
+    .card{
+        &:nth-of-type(1){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
+        }
+        &:nth-of-type(2){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .8s;
+        }
+        &:nth-of-type(3){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1s;
+        }
+        &:nth-of-type(4){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1.3s;
+        }
+    }
+    &.active{
+        h3{
+            opacity: 1;
+        }
+        .card{
+            &:nth-of-type(1){
+                opacity: 1;
+            }
+            &:nth-of-type(2){
+                opacity: 1;
+            }
+            &:nth-of-type(3){
+                opacity: 1;
+            }
+            &:nth-of-type(4){
+                opacity: 1;
+            }
+        }
+    }
+}
+#kids{
+    .card{
+        &:nth-of-type(1){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .3s;
+        }
+        &:nth-of-type(2){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
+        }
+    }
+    &.active{
+        .card{
+            &:nth-of-type(1){
+                opacity: 1;
+            }
+            &:nth-of-type(2){
+                opacity: 1;
+            }
+        }
+    }
+}
+#guides{
+    .card{
+        &:nth-of-type(1){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .3s;
+        }
+        &:nth-of-type(2){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
+        }
+        &:nth-of-type(3){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .8s;
+        }
+        &:nth-of-type(4){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .1s;
+        }
+    }
+    &.active{
+        .card{
+            &:nth-of-type(1){
+                opacity: 1;
+            }
+            &:nth-of-type(2){
+                opacity: 1;
+            }
+            &:nth-of-type(3){
+                opacity: 1;
+            }
+            &:nth-of-type(4){
+                opacity: 1;
+            }
+        }
+    }
+}
+#msg{
+    h3{
+        &:nth-of-type(1){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: .5s;
+        }
+        &:nth-of-type(2){
+            opacity: 0;
+            transition: all ease-in-out 1s;
+            transition-delay: 1s;
+        }
+    }
+    h2{
+        opacity: 0;
+        transition: all ease-in-out 1s;
+        transition-delay: 1.5s;
+    }
+    &.active{
+        h3{
+            &:nth-of-type(1){
+                opacity: 1;
+            }
+            &:nth-of-type(2){
+                opacity: 1;
+            }
+        }
+        h2{
+            opacity: 1;
+        }
+    }
+}
