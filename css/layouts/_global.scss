@@ -65,13 +65,16 @@ body{
         section{
             height: 100vh;
             width: 100%;
+            /*
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             transform: translateY(100vh);
             transition: all var(--time-animation) ease-in-out;
+            */
             z-index: 0;
+            position: relative;
 
             .container{
                 padding: 0 15px;
