@@ -1,10 +1,5 @@
-# SASS STARTER TEMPLATE
-
-### Template Includes
-
-- Bootstrap
-- JQuery
-- Normalize
+# Alfe & Judy
+- [View Page](https://alfecaesar.github.io/wedinv_judy_alfe/)
 
 ### to compile scss
 
