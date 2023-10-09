@@ -209,6 +209,265 @@ h1, h2, h3, h4, h5{
     }
 }
 
+.rsvp-container{
+    position: fixed;
+    bottom: 110px;
+    right: 10px;
+
+    > a{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        background-color:#664228;
+        cursor:pointer;
+        transition:1s;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            height: 20px;
+            width: 20px;
+
+            path,
+            circle{
+                stroke: #fff;
+            }
+        }
+    }
+
+    .modal-window {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.25);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        font-family: 'Abhaya Libre', serif;
+        &.open {
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+        }
+        & > div {
+          width: 100%;
+          max-width: 40vw;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 20px;
+          background: white;
+          box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+          border-radius: 10px;
+
+          @media (max-width: 767px){
+            max-width: 80vw;
+          }
+        }
+        h1 {
+          font-size: 40px;
+          margin: 0 0 15px;
+          color: #623634;
+          letter-spacing: 3px;
+
+          @media (max-width: 767px){
+            font-size: 30px;
+          }
+        }
+        .form{
+            .field{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                justify-content: center;
+                align-items: flex-start;
+                margin-bottom: 25px;
+
+                label{
+                    width: 100%;
+                    text-align: left;
+                    font-family: 'Abhaya Libre', serif;
+                    color: #623634;
+                    font-size: 25px;
+
+                    @media (max-width: 767px){
+                        font-size: 16px;
+                      }
+                }
+
+                input.field-input{
+                    width: 100%;
+                    height: 45px;
+                    border: 1px solid #623634;
+                    padding: 10px 20px;
+                    display: block;
+                    box-sizing: border-box;
+                    font-family: 'Parisienne', cursive;
+                    color: #eaba99;
+                    font-size: 20px;
+                    border-radius: 3px;
+
+                    @media (max-width: 767px){
+                        font-size: 20px;
+                      }
+
+                    &:focus{
+                        border: 1px solid #eaba99;
+                        outline: none;
+                        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+                    }
+                }
+
+                .switch {
+                    position: relative;
+                    height: 45px;
+                    width: 100%;
+                    margin: 0;
+                    background: rgba(0, 0, 0, 0.25);
+                    border-radius: 3px;
+                    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+                    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+
+                    .switch-label {
+                        position: relative;
+                        z-index: 2;
+                        float: left;
+                        width: 50%;
+                        line-height: 26px;
+                        font-size: 11px;
+                        color: gray;
+                        text-align: center;
+                        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+                        cursor: pointer;
+                        display: flex;
+                        height: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: #eee;
+                        padding: 0 !important;
+
+                        @media (max-width: 767px){
+                            font-size: 16px;
+                          }
+
+                        &:active {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .switch-label-off {
+                        padding-left: 2px;
+                    }
+
+                    .switch-label-on {
+                        padding-right: 2px;
+                    }
+
+
+                    .switch-input {
+                        display: none;
+                    }
+
+                    .switch-input:checked + .switch-label {
+                        font-weight: 400;
+                        color: #FFF;
+                        text-shadow: 0 1px rgba(0, 0, 0, 0.25);
+                        -webkit-transition: 0.15s ease-out;
+                        -moz-transition: 0.15s ease-out;
+                        -ms-transition: 0.15s ease-out;
+                        -o-transition: 0.15s ease-out;
+                        transition: 0.15s ease-out;
+                        -webkit-transition-property: color, text-shadow;
+                        -moz-transition-property: color, text-shadow;
+                        -ms-transition-property: color, text-shadow;
+                        -o-transition-property: color, text-shadow;
+                        transition-property: color, text-shadow;
+
+                    }
+
+                    .switch-input:checked + .switch-label-on ~ .switch-selection {
+                        left: 50%;
+                        /* Note: left: 50%; doesn't transition in WebKit */
+                    }
+
+                    .switch-selection {
+                        position: absolute;
+                        z-index: 1;
+                        top: 2px;
+                        left: 2px;
+                        display: block;
+                        width: 49.5%;
+                        height: 41px;
+                        border-radius: 3px;
+                        background-color: #eaba99;
+                        -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+                        box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+                        -webkit-transition: left 0.15s ease-out;
+                        -moz-transition: left 0.15s ease-out;
+                        -ms-transition: left 0.15s ease-out;
+                        -o-transition: left 0.15s ease-out;
+                        transition: left 0.15s ease-out;
+                    }
+
+                }
+                input.form-btn{
+                    cursor: pointer;
+                    font-family: 'Abhaya Libre', serif;
+                    color: #fff;
+                    font-size: 25px;
+                    border: none;
+                    border-radius: 3px;
+                    padding: 10px 20px;
+                    text-align: center;
+                    width: 50%;
+                    margin: 0 auto;
+                    display: inline-block;
+                    background-color: #623634;
+                    transition: linear 0.3s all;
+
+                    &:hover{
+                        background-color: #eaba99;
+                    }
+                }
+            }
+        }
+      }
+
+      .modal-close {
+        color: #eaba99;
+        line-height: 50px;
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        text-align: center;
+        top: 0;
+        width: 70px;
+        text-decoration: none;
+        font-family: 'Abhaya Libre', serif;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        @media (max-width: 767px){
+            font-size: 16px;
+            top: 10px;
+          }
+
+        &:hover {
+          color: black;
+        }
+      }
+}
+
 body{
     background: url(../assets/images/bg_water_color.jpg) 50% 50% no-repeat transparent;
     background-size: cover;

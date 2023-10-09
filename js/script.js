@@ -1,19 +1,16 @@
 console.log('🤵Alfe Caesar & Judy Ann👰');
 console.log('💍NOV-18-2023💍');
 
-
+// AUDIO PLAY/PAUSE
 var oAudio = document.getElementById('myaudio');
-// var btn = document.getElementById('play');
 var animationPauseOne = document.getElementById("animPauseOne");
 var animationPauseTwo = document.getElementById("animPauseTwo");
 var animationPlayOne = document.getElementById("animPlayOne");
 var animationPlayTwo = document.getElementById("animPlayTwo");
 
 function playAudio() {
-    // Check for audio element support.
     if (window.HTMLAudioElement) {
         try {
-            // Tests the paused attribute and set state.
             if (oAudio.paused) {
                 oAudio.play();
                 animationPauseOne.beginElement();
@@ -26,8 +23,20 @@ function playAudio() {
             }
         }
         catch (e) {
-            // Fail silently but show in F12 developer tools console
             if (window.console && console.error("Error:" + e));
         }
     }
 }
+
+// RSVP
+var modalTrigger = document.querySelector('.rsvp-container a.rsvp-trigger')
+var modalBox = document.querySelector('.rsvp-container #open-modal')
+var modalClose = document.querySelector('.rsvp-container  a.modal-close')
+
+modalTrigger.addEventListener('click', (e) => {
+    modalBox.classList.toggle('open');
+})
+
+modalClose.addEventListener('click', (e) => {
+    modalBox.classList.toggle('open');
+})
