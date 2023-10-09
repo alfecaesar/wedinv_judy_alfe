@@ -5,6 +5,7 @@ font-family: 'Parisienne', cursive;
 
 :root {
     --time-animation: 0.6s;
+    --transition: all 0.5s ease 0s;
 }
 
 @keyframes slide{
@@ -19,6 +20,117 @@ font-family: 'Parisienne', cursive;
     }
     40%{
       transform: scale(1.3);
+    }
+}
+
+@keyframes grain {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-1%, -1%);
+    }
+    20% {
+      transform: translate(1%, 1%);
+    }
+    30% {
+      transform: translate(-2%, -2%);
+    }
+    40% {
+      transform: translate(3%, 3%);
+    }
+    50% {
+      transform: translate(-3%, -3%);
+    }
+    60% {
+      transform: translate(4%, 4%);
+    }
+    70% {
+      transform: translate(-4%, -4%);
+    }
+    80% {
+      transform: translate(2%, 2%);
+    }
+    90% {
+      transform: translate(-3%, -3%);
+    }
+  }
+
+  @keyframes film-scratch {
+    0%,
+    100% {
+      transform: translateX(0);
+      opacity: 0.5;
+    }
+    10% {
+      transform: translateX(-1%);
+    }
+    20% {
+      transform: translateX(1%);
+    }
+    30% {
+      transform: translateX(-2%);
+      opacity: 0.75;
+    }
+    40% {
+      transform: translateX(3%);
+    }
+    50% {
+      transform: translateX(-3%);
+      opacity: 0.5;
+    }
+    60% {
+      transform: translateX(8%);
+    }
+    70% {
+      transform: translateX(-3%);
+    }
+    80% {
+      transform: translateX(10%);
+      opacity: 0.25;
+    }
+    90% {
+      transform: translateX(-2%);
+    }
+  }
+
+  @keyframes effect-scratch {
+    0% {
+      transform: translateX(0);
+      opacity: 0.75;
+    }
+    10% {
+      transform: translateX(-1%);
+    }
+    20% {
+      transform: translateX(1%);
+    }
+    30% {
+      transform: translateX(-2%);
+    }
+    40% {
+      transform: translateX(3%);
+    }
+    50% {
+      transform: translateX(-3%);
+      opacity: 0.5;
+    }
+    60% {
+      transform: translateX(8%);
+    }
+    70% {
+      transform: translateX(-3%);
+    }
+    80% {
+      transform: translateX(10%);
+      opacity: 0.25;
+    }
+    90% {
+      transform: translateX(20%);
+    }
+    100% {
+      transform: translateX(30%);
     }
   }
 
@@ -124,6 +236,11 @@ body{
             transition: all linear 0.3s;
             pointer-events: none;
 
+            @media (max-width: 1800px){
+                width: 500px;
+                background-position: 0 100%;
+            }
+
             @media (max-width: 1600px){
                 width: 400px;
                 background-position: 0 100%;
@@ -147,6 +264,10 @@ body{
             background-size: contain;
             transition: all linear 0.3s;
             pointer-events: none;
+
+            @media (max-width: 1800px){
+                width: 500px;
+            }
 
             @media (max-width: 1600px){
                 width: 400px;
@@ -178,6 +299,87 @@ body{
 
         #banner{
             position: relative;
+            transition: var(--transition);
+
+            .film{
+                width: 100%;
+                height: 100%;
+                filter: invert(1);
+                position: absolute;
+                display: none; /* turned off */
+
+                &:after{
+                    position: absolute;
+                    content: "";
+                    width: 120%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    padding-left: 100px;
+                    opacity: 0.5;
+                    animation: film-scratch 0.45s steps(1) infinite;
+                    background: repeating-linear-gradient(
+                        90deg,
+                        #0002 0 2px,
+                        transparent 4px 37vmin
+                    );
+                }
+
+                .effect {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    filter: invert(1);
+
+                    &:after{
+                        position: absolute;
+                        content: "";
+                        width: 120%;
+                        height: 100%;
+                        top: 0;
+                        padding-left: 100px;
+                        opacity: 0.5;
+                        background: repeating-linear-gradient(
+                            90deg,
+                            #0002 0 2px,
+                            transparent 4px 37vmin
+                        );
+                        left: 30%;
+                        animation: effect-scratch 2s infinite;
+                    }
+
+                    .grain {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+
+                        &:after{
+                            position: absolute;
+                            content: "";
+                            width: 110%;
+                            height: 110%;
+                            top: -5%;
+                            left: -5%;
+                            opacity: 0.25;
+                            background-image: repeating-conic-gradient(
+                                var(--black) 0%,
+                                transparent 0.00003%,
+                                transparent 0.0005%,
+                                transparent 0.00095%
+                                ),
+                                repeating-conic-gradient(
+                                var(--black) 0%,
+                                transparent 0.00005%,
+                                transparent 0.00015%,
+                                transparent 0.0009%
+                                );
+                            animation: grain 0.5s steps(1) infinite;
+                            filter: drop-shadow(0px 0px 1px black);
+                        }
+                    }
+                }
+            }
+
 
             &:before{
                 position: absolute;
@@ -221,7 +423,7 @@ body{
                         color: #FFF;
                         font-size: 57px;
                         line-height: 1em;
-                        text-shadow: 0px 0px 5px rgba(96,60,57,0.7);
+                        text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
 
                         @media (max-width: 1300px){
                             font-size: 30px;
@@ -237,7 +439,7 @@ body{
                         color: #FFF;
                         font-size: 100px;
                         line-height: 1em;
-                        text-shadow: 0px 0px 10px rgba(96,60,57,0.5);
+                        text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
 
                         span{
                             font-family: 'Abhaya Libre', serif;
@@ -268,7 +470,7 @@ body{
                             color: #FFF;
                             font-size: 60px;
                             line-height: 1em;
-                            text-shadow: 0px 0px 5px rgba(96,60,57,0.7);
+                            text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
 
                             @media (max-width: 1300px){
                                 font-size: 30px;
@@ -303,7 +505,7 @@ body{
                                 text-align: center;
                                 letter-spacing: 5px;
                                 text-transform: uppercase;
-                                text-shadow: 0px 0px 5px rgba(96,60,57,0.7);
+                                text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
 
                                 @media (max-width: 1300px){
                                     font-size: 19px;
@@ -324,7 +526,7 @@ body{
                                 font-size: 80px;
                                 line-height: 1em;
                                 letter-spacing: 5px;
-                                text-shadow: 0px 0px 5px rgba(96,60,57,0.7);
+                                text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
 
                                 @media (max-width: 1300px){
                                     font-size: 50px;
@@ -338,7 +540,7 @@ body{
                             font-size: 25px;
                             line-height: 1em;
                             letter-spacing: 5px;
-                            text-shadow: 0px 0px 5px rgba(96,60,57,0.7);
+                            text-shadow: 0px 0px 5px rgba(0,0,0,0.7);
 
                             @media (max-width: 1300px){
                                 font-size: 20px;
@@ -1203,6 +1405,115 @@ body{
 
                         @media (max-width: 767px){
                             font-weight: 400;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        #parents{
+
+            &.section{
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+
+                @media (max-width: 767px){
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                }
+
+                .container{
+                    position: relative;
+                    z-index: 10;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 50px;
+
+                    @media (max-width: 767px){
+                        gap: 30px;
+                    }
+
+                    h3{
+                        font-family: 'Parisienne', cursive;
+                        color: #623634;
+                        font-size: 57px;
+                        line-height: 1em;
+                        text-align: center;
+
+                        @media (max-width: 1300px){
+                            font-size: 30px;
+                        }
+
+                        @media (max-width: 767px){
+                            font-weight: 400;
+                        }
+                    }
+
+                    .card-wrapper{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        gap: 20px;
+                        max-width: 900px;
+                        width: 100%;
+
+                        @media (max-width: 767px){
+                            flex-direction: column;
+                            align-items: center;
+                        }
+
+                        .card{
+                            flex-basis: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            h4{
+                                font-family: 'Parisienne', cursive;
+                                color: #eaba99;
+                                font-size: 40px;
+                                line-height: 1em;
+                                padding: 10px 20px;
+                                border-bottom: 2px solid #eaba99;
+                                text-align: center;
+                                margin-bottom: 30px;
+                                display: inline-block;
+
+                                @media (max-width: 1300px){
+                                    font-size: 25px;
+                                }
+
+                                @media (max-width: 767px){
+                                    font-size: 20px;
+                                    margin-bottom: 15px;
+                                }
+                            }
+
+                            .name{
+                                font-family: 'Abhaya Libre', serif;
+                                color: #623634;
+                                font-size: 25px;
+                                line-height: 1em;
+                                letter-spacing: 3px;
+                                text-align: center;
+                                margin-bottom: 20px;
+
+                                @media (max-width: 1300px){
+                                    font-size: 20px;
+                                }
+
+                                @media (max-width: 767px){
+                                    font-size: 16px;
+                                    margin-bottom: 5px;
+                                }
+                            }
                         }
                     }
 
